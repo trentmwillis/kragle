@@ -3,8 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "description": "A collection of packages for binding data to UIs on the web",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/trentmwillis/bound.git"
