@@ -1,3 +1,5 @@
+sudo: required
+
 language: node_js
 
 node_js:
@@ -14,7 +16,8 @@ cache:
   directories:
     - $HOME/.npm
 
+before_script:
+  - npm run init
+
 script:
-  - lerna run lint
-  - lerna run build
-  - lerna run test
+  - npm run ci
