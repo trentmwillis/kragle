@@ -1,17 +1,17 @@
 export default interface BoundNode {
-  node: Node;
+  n: Node; // Node
 }
 
 export interface BoundAttributeNode extends BoundNode {
-  originalValue: string;
-  values: Map<string, string>;
+  ov: string; // Original Value
+  v: Map<string, string>; // Vaues
 }
 
 export interface BoundPropertyNode extends BoundNode {
-  propName: string;
+  pn: string; // Property Name
 }
 
 export interface BoundEventHandlerNode extends BoundNode {
-  eventName: string;
-  eventHandler: (event: Event) => void;
+  en: string; // Event Name
+  eh: (event: Event) => void; // Event Handler
 }

@@ -7,27 +7,28 @@ import TemplateBindingsFactory from './template-bindings-factory';
  */
 export default class TemplateBindingsParser {
 
-  static BINDING_REGEX = /{{([a-zA-z0-9]*)}}/;
+  static BR = /{{([a-zA-z0-9]*)}}/; // Binding Regex
 
-  static parse(template: HTMLTemplateElement) {
+  static p(template: HTMLTemplateElement) {
 
-    const bindings = new TemplateBindingsFactory();
+    let bindings = new TemplateBindingsFactory();
 
-    this.parseNodes(bindings, template.content.childNodes, []);
+    this.pNs(bindings, template.content.childNodes, []);
 
     return bindings;
 
   }
 
   // Parses a set of nodes to see if they have any template bindings
-  static parseNodes(bindings: TemplateBindingsFactory, nodes: NodeList, path: number[]) {
+  // Parse Nodes
+  static pNs(bindings: TemplateBindingsFactory, nodes: NodeList, path: number[]) {
 
     // We do a depth-first traversal of the nodes with prefix visiting for
     // actually parsing bindings
     for (let i = 0; i < nodes.length; i++) {
 
       path.push(i);
-      this.parseNode(bindings, nodes[i], path);
+      this.pN(bindings, nodes[i], path);
       path.pop();
 
     }
@@ -35,11 +36,13 @@ export default class TemplateBindingsParser {
   }
 
   // Parses a single node to see if it has any template bindings
-  static parseNode(bindings: TemplateBindingsFactory, node: Node, path: number[]) {
+  // Parse Node
+  static pN(bindings: TemplateBindingsFactory, node: Node, path: number[]) {
 
+    let t = this;
     if (node.nodeType === Node.TEXT_NODE) {
 
-      return this.parseTextBindings(bindings, node as Text, path);
+      return t.pTB(bindings, node as Text, path);
 
     }
 
@@ -47,13 +50,13 @@ export default class TemplateBindingsParser {
 
       if (node.hasAttributes()) {
 
-        this.parseAttributes(bindings, node.attributes, path);
+        t.pAs(bindings, node.attributes, path);
 
       }
 
       if (node.hasChildNodes()) {
 
-        this.parseNodes(bindings, node.childNodes, path);
+        t.pNs(bindings, node.childNodes, path);
 
       }
 
@@ -62,22 +65,24 @@ export default class TemplateBindingsParser {
   }
 
   // Parses the attributes of a node to see if they have any template bindings
-  static parseAttributes(bindings: TemplateBindingsFactory, attributes: NamedNodeMap, path: number[]) {
+  // Parse Attributes
+  static pAs(bindings: TemplateBindingsFactory, attributes: NamedNodeMap, path: number[]) {
 
     // tslint:disable-next-line prefer-for-of
     for (let i = 0; i < attributes.length; i++) {
 
-      this.parseAttribute(bindings, attributes[i], path);
+      this.pA(bindings, attributes[i], path);
 
     }
 
   }
 
   // Parses a single attribute node for template bindings
-  static parseAttribute(bindings: TemplateBindingsFactory, attribute: Attr, path: number[]) {
+  // Parse Attribute
+  static pA(bindings: TemplateBindingsFactory, attribute: Attr, path: number[]) {
 
-    const regex = new RegExp(this.BINDING_REGEX.source, 'g');
-    const names: string[] = [];
+    let regex = new RegExp(this.BR.source, 'g');
+    let names: string[] = [];
     let match: RegExpMatchArray = regex.exec(attribute.value);
     while (match) {
 
@@ -88,17 +93,18 @@ export default class TemplateBindingsParser {
 
     if (names.length) {
 
-      bindings.addAttributeBinding(names, attribute.name, path);
+      bindings.addAB(names, attribute.name, path);
 
     }
 
   }
 
   // Parses a single text node for template bindings
-  static parseTextBindings(bindings: TemplateBindingsFactory, node: Text, path: number[]) {
+  // Parse Text Bindings
+  static pTB(bindings: TemplateBindingsFactory, node: Text, path: number[]) {
 
-    const regex = new RegExp(this.BINDING_REGEX.source, 'g');
-    const match = regex.exec(node.textContent);
+    let regex = new RegExp(this.BR.source, 'g');
+    let match = regex.exec(node.textContent);
     if (match) {
       if (match.index) {
         node.splitText(match.index);
@@ -109,8 +115,8 @@ export default class TemplateBindingsParser {
         node.splitText(match[0].length);
       }
 
-      const name = match[1];
-      bindings.addTextBinding(name, path);
+      let name = match[1];
+      bindings.addTB(name, path);
     }
 
   }

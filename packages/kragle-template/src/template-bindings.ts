@@ -5,11 +5,11 @@ import BoundNode, {
 } from './bound-node';
 
 function isBoundEventHandlerNode(node: BoundNode): node is BoundEventHandlerNode {
-  return node.hasOwnProperty('eventName');
+  return node.hasOwnProperty('eb');
 }
 
 function isBoundPropertyNode(node: BoundNode): node is BoundPropertyNode {
-  return node.hasOwnProperty('propName');
+  return node.hasOwnProperty('pn');
 }
 
 /**
@@ -17,11 +17,11 @@ function isBoundPropertyNode(node: BoundNode): node is BoundPropertyNode {
  */
 export default class TemplateBindings {
 
-  _map: Map<string, BoundNode[]>;
+  _m: Map<string, BoundNode[]>; // Mapping
 
   constructor(bindingsMap: Map<string, BoundNode[]>) {
 
-    this._map = bindingsMap;
+    this._m = bindingsMap;
 
   }
 
@@ -33,38 +33,38 @@ export default class TemplateBindings {
 
   set(name: string, value: any) {
 
-    const boundNodes = this._map.get(name);
+    let boundNodes = this._m.get(name);
     if (boundNodes) {
 
       for (let boundNode of boundNodes) {
 
-        const { node } = boundNode;
-        if (node.nodeType === Node.TEXT_NODE) {
+        let { n } = boundNode;
+        if (n.nodeType === Node.TEXT_NODE) {
 
-          node.textContent = value.toString();
+          n.textContent = value.toString();
 
         } else if (isBoundEventHandlerNode(boundNode)) {
 
-          const { eventHandler, eventName } = boundNode;
-          node.removeEventListener(eventName, eventHandler);
-          node.addEventListener(eventName, value);
-          boundNode.eventHandler = value;
+          let { eh, en } = boundNode;
+          n.removeEventListener(en, eh);
+          n.addEventListener(en, value);
+          boundNode.eh = value;
 
         } else if (isBoundPropertyNode(boundNode)) {
 
-          (node as Element).props[boundNode.propName] = value;
+          (n as Element).props[boundNode.pn] = value;
 
         } else {
 
-          const { values, originalValue } = boundNode as BoundAttributeNode;
-          values.set(name, value.toString());
+          let { v, ov } = boundNode as BoundAttributeNode;
+          v.set(name, value.toString());
 
-          let attrValue = originalValue;
-          for (let [k, v] of values) {
-            attrValue = attrValue.replace(`{{${k}}}`, v);
+          let attrValue = ov;
+          for (let [key, val] of v) {
+            attrValue = attrValue.replace(`{{${key}}}`, val);
           }
 
-          (node as Attr).value = attrValue;
+          (n as Attr).value = attrValue;
 
         }
 

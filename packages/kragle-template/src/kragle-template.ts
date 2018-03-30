@@ -9,13 +9,13 @@ import TemplateBindingsParser from './template-bindings-parser';
  */
 export default class KragleTemplate {
 
-  private _bindingsFactory: TemplateBindingsFactory;
-  private _template: HTMLTemplateElement;
+  private _bf: TemplateBindingsFactory; // Bindings Factory
+  private _t: HTMLTemplateElement; // Template
 
   constructor(template: HTMLTemplateElement) {
 
-    this._bindingsFactory = null;
-    this._template = template;
+    this._bf = null;
+    this._t = template;
 
   }
 
@@ -26,14 +26,15 @@ export default class KragleTemplate {
    */
   create(data?: object): [Node, TemplateBindings] {
 
-    if (!this._bindingsFactory) {
+    let t = this;
+    if (!t._bf) {
 
-      this._bindingsFactory = TemplateBindingsParser.parse(this._template);
+      t._bf = TemplateBindingsParser.p(t._t);
 
     }
 
-    const instance = this._template.content.cloneNode(true);
-    const bindings = this._bindingsFactory.applyTo(instance);
+    let instance = t._t.content.cloneNode(true);
+    let bindings = t._bf.apply(instance);
 
     if (data) {
 
