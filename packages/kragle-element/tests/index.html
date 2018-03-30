@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+
+  <title>BoundTemplate Tests</title>
+
+  <link rel="stylesheet" href="../node_modules/qunitjs/qunit/qunit.css">
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+
+  <script src="../node_modules/kragle-template/dist/kragle-template.js"></script>
+  <script src="../dist/kragle-element.js"></script>
+  <script src="../node_modules/qunitjs/qunit/qunit.js"></script>
+  <script src="/testem.js"></script>
+
+  <template id="simple-element-template">
+    <h1>Hello, world!</h1>
+  </template>
+
+  <template id="simple-element-no-shadow-template">
+      <h1>Hello, world!</h1>
+    </template>
+
+  <template id="props-element-template">
+    <h1>Hello, {{name}}!</h1>
+  </template>
+
+  <template id="nested-props-element-template">
+    <props-element name$={{name}}></props-element>
+    <h2>My name is also {{name}}!</h2>
+  </template>
+
+  <script>
+    QUnit.module('KragleElement', function() {
+
+      const fixture = document.getElementById('qunit-fixture');
+
+      class SimpleElement extends KragleElement {
+
+        static get is() {
+
+          return 'simple-element';
+
+        }
+
+      }
+      customElements.define(SimpleElement.is, SimpleElement);
+
+      class SimpleElementNoShadow extends KragleElement {
+
+        static get is() {
+
+          return 'simple-element-no-shadow';
+
+        }
+
+        static get useShadow() {
+
+          return false;
+
+        }
+
+      }
+      customElements.define(SimpleElementNoShadow.is, SimpleElementNoShadow);
+
+      class PropsElement extends KragleElement {
+
+        static get is() {
+
+          return 'props-element';
+
+        }
+
+      }
+      customElements.define(PropsElement.is, PropsElement);
+
+      class NestedPropsElement extends KragleElement {
+
+        static get is() {
+
+          return 'nested-props-element';
+
+        }
+
+      }
+      customElements.define(NestedPropsElement.is, NestedPropsElement);
+
+      customElements.define('no-is', KragleElement);
+
+      QUnit.test('instantiates the element with a clone of the template', function(assert) {
+
+        const element = document.createElement('simple-element');
+        fixture.appendChild(element);
+        assert.equal(element.shadowRoot.innerHTML.trim(), '<h1>Hello, world!</h1>');
+
+      });
+
+      QUnit.test('element has a props field bound to the template', function(assert) {
+
+        const element = document.createElement('props-element');
+        fixture.appendChild(element);
+        assert.equal(element.shadowRoot.innerHTML.trim(), '<h1>Hello, !</h1>');
+
+        element.props.name = 'Trent';
+        assert.equal(element.shadowRoot.innerHTML.trim(), '<h1>Hello, Trent!</h1>');
+
+      });
+
+      QUnit.test('can disable shadow DOM by defining useShadow to false', function(assert) {
+
+        const element = document.createElement('simple-element-no-shadow');
+        fixture.appendChild(element);
+        assert.notOk(element.shadowRoot);
+        assert.equal(element.innerHTML.trim(), '<h1>Hello, world!</h1>');
+
+      });
+
+      QUnit.test('nested templates can chain property modifications', function(assert) {
+
+        const element = document.createElement('nested-props-element');
+        fixture.appendChild(element);
+
+        const nestedElement = element.shadowRoot.querySelector('props-element');
+        assert.equal(nestedElement.shadowRoot.textContent.trim(), 'Hello, !');
+        assert.equal(element.shadowRoot.textContent.trim(), 'My name is also !');
+
+        element.props.name = 'Trent';
+        assert.equal(nestedElement.shadowRoot.textContent.trim(), 'Hello, Trent!');
+        assert.equal(element.shadowRoot.textContent.trim(), 'My name is also Trent!');
+
+      });
+
+    });
+  </script>
+</body>
+</html>

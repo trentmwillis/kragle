@@ -1,0 +1,37 @@
+{
+  "name": "kragle-element",
+  "version": "0.1.0",
+  "description": "A micro-library for using kragle-template in custom elements",
+  "main": "dist/kragle-element.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup -c rollup.config.js",
+    "build:minify": "uglifyjs dist/kragle-element.js -mc -o dist/kragle-element.min.js",
+    "build:watch": "rollup -c rollup.config.js --watch",
+    "lint": "tslint -c '../../tslint.json' index.ts 'src/**/*.ts'",
+    "size": "uglifyjs dist/kragle-element.js -mc | gzip -9 | wc -c",
+    "test": "testem ci"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trentmwillis/bound-element.git"
+  },
+  "author": "Trent Willis <trentmwillis@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/trentmwillis/bound-element/issues"
+  },
+  "homepage": "https://github.com/trentmwillis/bound-element#readme",
+  "dependencies": {
+    "kragle-template": "^0.1.0"
+  },
+  "devDependencies": {
+    "qunitjs": "^2.4.0",
+    "rollup": "^0.50.0",
+    "rollup-plugin-typescript2": "^0.8.1",
+    "testem": "^1.18.4",
+    "tslint": "^5.8.0",
+    "typescript": "^2.5.3",
+    "uglify-es": "^3.1.3"
+  }
+}
