@@ -4,4 +4,4 @@ declare global {
   }
 }
 
-export { default } from './src/bound-template';
+export { default } from './src/kragle-template';

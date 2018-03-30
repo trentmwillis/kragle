@@ -1,9 +1,6 @@
-# BoundTemplate
+# KragleTemplate
 
-[![Build Status](https://travis-ci.org/trentmwillis/bound-template.svg?branch=master)](https://travis-ci.org/trentmwillis/bound-template)
-[![npm version](https://badge.fury.io/js/bound-template.svg)](https://badge.fury.io/js/bound-template)
-
-A micro-library for binding data to [HTML Templates](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template).
+A micro-library for gluing data to [HTML Templates](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template).
 
 ## Goals
 
@@ -61,17 +58,17 @@ Anytime the binding for an event handler is updated, the old handler will be rem
 
 The API surface is relatively small and thus simple to use.
 
-To get started, simply pass a reference to a template you would like to bind into the `BoundTemplate` constructor (the only export from this package):
+To get started, simply pass a reference to a template you would like to bind into the `KragleTemplate` constructor (the only export from this package):
 
 ```javascript
-const template = document.getElementById('greeting');
-const boundTemplate = new BoundTemplate(template);
+const templateElement = document.getElementById('greeting');
+const template = new KragleTemplate(templateElement);
 ```
 
-The resulting `boundTemplate` object is a factory function with only one method, `create()`:
+The resulting `template` object is a factory function with only one method, `create()`:
 
 ```javascript
-const [instance, bindings] = boundTemplate.create();
+const [instance, bindings] = template.create();
 ```
 
 `create()` will return a cloned instance of the template, which you can then insert into the DOM, and a bindings object which allows you to set values directly into the template instance:
@@ -88,7 +85,7 @@ bindings.set('name', 'Zelda');
 You can optionally pass an object to `create` which will be used to instantiate the bindings to default values:
 
 ```javascript
-const [instance, bindings] = boundTemplate.create({
+const [instance, bindings] = template.create({
   color: 'red',
   name: 'Zelda'
 });

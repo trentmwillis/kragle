@@ -1,19 +1,19 @@
 {
-  "name": "bound",
+  "name": "kragle",
   "private": true,
   "version": "1.0.0",
-  "description": "A collection of packages for binding data to UIs on the web",
+  "description": "A collection of packages for gluing data to UIs on the web",
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/trentmwillis/bound.git"
+    "url": "git+https://github.com/trentmwillis/kragle.git"
   },
   "author": "Trent Willis <trentmwillis@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/trentmwillis/bound/issues"
+    "url": "https://github.com/trentmwillis/kragle/issues"
   },
-  "homepage": "https://github.com/trentmwillis/bound#readme",
+  "homepage": "https://github.com/trentmwillis/kragle#readme",
   "devDependencies": {
     "lerna": "^2.6.0"
   }

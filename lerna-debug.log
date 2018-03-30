@@ -1,0 +1,534 @@
+0 silly input [ 'test' ]
+1 silly flags { _: [ 'run' ],
+1 silly flags   'reject-cycles': false,
+1 silly flags   rejectCycles: false,
+1 silly flags   script: 'test',
+1 silly flags   args: [] }
+2 verbose rootPath /Users/trentmwillis/workspace/kragle
+3 info version 2.6.0
+4 silly existsSync /Users/trentmwillis/workspace/kragle/VERSION
+5 silly initialize attempt
+6 silly initialize success
+7 silly execute attempt
+8 silly runScriptInDir test [] kragle-template
+9 silly getExecOpts { cwd: '/Users/trentmwillis/workspace/kragle/packages/kragle-template' }
+10 error test Errored while running script in 'kragle-template'
+11 error execute callback with error
+12 error Error: Command failed: npm run test
+12 error npm ERR! code ELIFECYCLE
+12 error npm ERR! errno 1
+12 error npm ERR! kragle-template@0.1.0 test: `testem ci`
+12 error npm ERR! Exit status 1
+12 error npm ERR!
+12 error npm ERR! Failed at the kragle-template@0.1.0 test script.
+12 error npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+12 error
+12 error npm ERR! A complete log of this run can be found in:
+12 error npm ERR!     /Users/trentmwillis/.npm/_logs/2018-03-30T03_03_34_341Z-debug.log
+12 error
+12 error > kragle-template@0.1.0 test /Users/trentmwillis/workspace/kragle/packages/kragle-template
+12 error > testem ci
+12 error
+12 error not ok 1 Chrome 65.0 - KragleTemplate > Text Bindings: can insert values into text nodes
+12 error     ---
+12 error         actual: >
+12 error             null
+12 error         expected: >
+12 error             null
+12 error         stack: >
+12 error             ReferenceError: KragleTemplate is not defined
+12 error                 at createTemplateAndInstantiate (http://localhost:7357/6793/tests/index.html:131:26)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:141:40)
+12 error                 at runTest (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1471:30)
+12 error                 at Test.run (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1457:6)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1663:12
+12 error                 at Object.advance (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1116:26)
+12 error                 at begin (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2928:20)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2888:6
+12 error         message: >
+12 error             Died on test #1     at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:139:15)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:137:13)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at http://localhost:7357/6793/tests/index.html:126:11: KragleTemplate is not defined
+12 error         Log: |
+12 error     ...
+12 error not ok 2 Chrome 65.0 - KragleTemplate > Text Bindings: can insert values into deeply nested text nodes
+12 error     ---
+12 error         actual: >
+12 error             null
+12 error         expected: >
+12 error             null
+12 error         stack: >
+12 error             ReferenceError: KragleTemplate is not defined
+12 error                 at createTemplateAndInstantiate (http://localhost:7357/6793/tests/index.html:131:26)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:157:40)
+12 error                 at runTest (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1471:30)
+12 error                 at Test.run (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1457:6)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1663:12
+12 error                 at Object.advance (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1116:26)
+12 error                 at begin (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2928:20)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2888:6
+12 error         message: >
+12 error             Died on test #1     at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:155:15)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:137:13)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at http://localhost:7357/6793/tests/index.html:126:11: KragleTemplate is not defined
+12 error         Log: |
+12 error     ...
+12 error not ok 3 Chrome 65.0 - KragleTemplate > Text Bindings: can insert values into adjacent text nodes
+12 error     ---
+12 error         actual: >
+12 error             null
+12 error         expected: >
+12 error             null
+12 error         stack: >
+12 error             ReferenceError: KragleTemplate is not defined
+12 error                 at createTemplateAndInstantiate (http://localhost:7357/6793/tests/index.html:131:26)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:175:40)
+12 error                 at runTest (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1471:30)
+12 error                 at Test.run (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1457:6)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1663:12
+12 error                 at Object.advance (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1116:26)
+12 error                 at begin (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2928:20)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2888:6
+12 error         message: >
+12 error             Died on test #1     at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:173:15)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:137:13)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at http://localhost:7357/6793/tests/index.html:126:11: KragleTemplate is not defined
+12 error         Log: |
+12 error     ...
+12 error not ok 4 Chrome 65.0 - KragleTemplate > Text Bindings: can insert the same value into multiple text nodes
+12 error     ---
+12 error         actual: >
+12 error             null
+12 error         expected: >
+12 error             null
+12 error         stack: >
+12 error             ReferenceError: KragleTemplate is not defined
+12 error                 at createTemplateAndInstantiate (http://localhost:7357/6793/tests/index.html:131:26)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:192:40)
+12 error                 at runTest (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1471:30)
+12 error                 at Test.run (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1457:6)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1663:12
+12 error                 at Object.advance (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1116:26)
+12 error                 at begin (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2928:20)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2888:6
+12 error         message: >
+12 error             Died on test #1     at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:190:15)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:137:13)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at http://localhost:7357/6793/tests/index.html:126:11: KragleTemplate is not defined
+12 error         Log: |
+12 error     ...
+12 error not ok 5 Chrome 65.0 - KragleTemplate > Attribute Bindings: can insert values into element attributes
+12 error     ---
+12 error         actual: >
+12 error             null
+12 error         expected: >
+12 error             null
+12 error         stack: >
+12 error             ReferenceError: KragleTemplate is not defined
+12 error                 at createTemplateAndInstantiate (http://localhost:7357/6793/tests/index.html:131:26)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:212:40)
+12 error                 at runTest (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1471:30)
+12 error                 at Test.run (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1457:6)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1663:12
+12 error                 at Object.advance (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1116:26)
+12 error                 at begin (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2928:20)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2888:6
+12 error         message: >
+12 error             Died on test #1     at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:210:15)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:208:13)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at http://localhost:7357/6793/tests/index.html:126:11: KragleTemplate is not defined
+12 error         Log: |
+12 error     ...
+12 error not ok 6 Chrome 65.0 - KragleTemplate > Attribute Bindings: can insert values into deeply nested element attributes
+12 error     ---
+12 error         actual: >
+12 error             null
+12 error         expected: >
+12 error             null
+12 error         stack: >
+12 error             ReferenceError: KragleTemplate is not defined
+12 error                 at createTemplateAndInstantiate (http://localhost:7357/6793/tests/index.html:131:26)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:237:40)
+12 error                 at runTest (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1471:30)
+12 error                 at Test.run (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1457:6)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1663:12
+12 error                 at Object.advance (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1116:26)
+12 error                 at begin (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2928:20)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2888:6
+12 error         message: >
+12 error             Died on test #1     at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:235:15)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:208:13)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at http://localhost:7357/6793/tests/index.html:126:11: KragleTemplate is not defined
+12 error         Log: |
+12 error     ...
+12 error not ok 7 Chrome 65.0 - KragleTemplate > Attribute Bindings: can insert values into adjacent bindings in an element attribute
+12 error     ---
+12 error         actual: >
+12 error             null
+12 error         expected: >
+12 error             null
+12 error         stack: >
+12 error             ReferenceError: KragleTemplate is not defined
+12 error                 at createTemplateAndInstantiate (http://localhost:7357/6793/tests/index.html:131:26)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:254:40)
+12 error                 at runTest (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1471:30)
+12 error                 at Test.run (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1457:6)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1663:12
+12 error                 at Object.advance (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1116:26)
+12 error                 at begin (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2928:20)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2888:6
+12 error         message: >
+12 error             Died on test #1     at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:252:15)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:208:13)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at http://localhost:7357/6793/tests/index.html:126:11: KragleTemplate is not defined
+12 error         Log: |
+12 error     ...
+12 error not ok 8 Chrome 65.0 - KragleTemplate > Attribute Bindings: can insert values into multiple different element attributes
+12 error     ---
+12 error         actual: >
+12 error             null
+12 error         expected: >
+12 error             null
+12 error         stack: >
+12 error             ReferenceError: KragleTemplate is not defined
+12 error                 at createTemplateAndInstantiate (http://localhost:7357/6793/tests/index.html:131:26)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:276:40)
+12 error                 at runTest (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1471:30)
+12 error                 at Test.run (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1457:6)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1663:12
+12 error                 at Object.advance (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1116:26)
+12 error                 at begin (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2928:20)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2888:6
+12 error         message: >
+12 error             Died on test #1     at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:274:15)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:208:13)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at http://localhost:7357/6793/tests/index.html:126:11: KragleTemplate is not defined
+12 error         Log: |
+12 error     ...
+12 error not ok 9 Chrome 65.0 - KragleTemplate > Attribute Bindings: can insert values into element attributes with hyphenated names
+12 error     ---
+12 error         actual: >
+12 error             null
+12 error         expected: >
+12 error             null
+12 error         stack: >
+12 error             ReferenceError: KragleTemplate is not defined
+12 error                 at createTemplateAndInstantiate (http://localhost:7357/6793/tests/index.html:131:26)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:296:40)
+12 error                 at runTest (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1471:30)
+12 error                 at Test.run (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1457:6)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1663:12
+12 error                 at Object.advance (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1116:26)
+12 error                 at begin (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2928:20)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2888:6
+12 error         message: >
+12 error             Died on test #1     at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:294:15)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:208:13)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at http://localhost:7357/6793/tests/index.html:126:11: KragleTemplate is not defined
+12 error         Log: |
+12 error     ...
+12 error not ok 10 Chrome 65.0 - KragleTemplate > Property Bindings: can insert values as properties on an element
+12 error     ---
+12 error         actual: >
+12 error             null
+12 error         expected: >
+12 error             null
+12 error         stack: >
+12 error             ReferenceError: KragleTemplate is not defined
+12 error                 at createTemplateAndInstantiate (http://localhost:7357/6793/tests/index.html:131:26)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:317:40)
+12 error                 at runTest (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1471:30)
+12 error                 at Test.run (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1457:6)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1663:12
+12 error                 at Object.advance (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1116:26)
+12 error                 at begin (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2928:20)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2888:6
+12 error         message: >
+12 error             Died on test #1     at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:315:15)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:313:13)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at http://localhost:7357/6793/tests/index.html:126:11: KragleTemplate is not defined
+12 error         Log: |
+12 error     ...
+12 error not ok 11 Chrome 65.0 - KragleTemplate > Property Bindings: can insert values as properties on a deeply nested element
+12 error     ---
+12 error         actual: >
+12 error             null
+12 error         expected: >
+12 error             null
+12 error         stack: >
+12 error             ReferenceError: KragleTemplate is not defined
+12 error                 at createTemplateAndInstantiate (http://localhost:7357/6793/tests/index.html:131:26)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:344:40)
+12 error                 at runTest (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1471:30)
+12 error                 at Test.run (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1457:6)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1663:12
+12 error                 at Object.advance (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1116:26)
+12 error                 at begin (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2928:20)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2888:6
+12 error         message: >
+12 error             Died on test #1     at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:342:15)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:313:13)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at http://localhost:7357/6793/tests/index.html:126:11: KragleTemplate is not defined
+12 error         Log: |
+12 error     ...
+12 error not ok 12 Chrome 65.0 - KragleTemplate > Property Bindings: ignores multiple values inserted as a single property on an element
+12 error     ---
+12 error         actual: >
+12 error             null
+12 error         expected: >
+12 error             null
+12 error         stack: >
+12 error             ReferenceError: KragleTemplate is not defined
+12 error                 at createTemplateAndInstantiate (http://localhost:7357/6793/tests/index.html:131:26)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:365:40)
+12 error                 at runTest (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1471:30)
+12 error                 at Test.run (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1457:6)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1663:12
+12 error                 at Object.advance (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1116:26)
+12 error                 at begin (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2928:20)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2888:6
+12 error         message: >
+12 error             Died on test #1     at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:363:15)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:313:13)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at http://localhost:7357/6793/tests/index.html:126:11: KragleTemplate is not defined
+12 error         Log: |
+12 error     ...
+12 error not ok 13 Chrome 65.0 - KragleTemplate > Property Bindings: can insert values as properties on multiple elements
+12 error     ---
+12 error         actual: >
+12 error             null
+12 error         expected: >
+12 error             null
+12 error         stack: >
+12 error             ReferenceError: KragleTemplate is not defined
+12 error                 at createTemplateAndInstantiate (http://localhost:7357/6793/tests/index.html:131:26)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:383:40)
+12 error                 at runTest (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1471:30)
+12 error                 at Test.run (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1457:6)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1663:12
+12 error                 at Object.advance (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1116:26)
+12 error                 at begin (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2928:20)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2888:6
+12 error         message: >
+12 error             Died on test #1     at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:381:15)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:313:13)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at http://localhost:7357/6793/tests/index.html:126:11: KragleTemplate is not defined
+12 error         Log: |
+12 error     ...
+12 error not ok 14 Chrome 65.0 - KragleTemplate > Property Bindings: can insert values as properties with hyphenated names on an element
+12 error     ---
+12 error         actual: >
+12 error             null
+12 error         expected: >
+12 error             null
+12 error         stack: >
+12 error             ReferenceError: KragleTemplate is not defined
+12 error                 at createTemplateAndInstantiate (http://localhost:7357/6793/tests/index.html:131:26)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:408:40)
+12 error                 at runTest (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1471:30)
+12 error                 at Test.run (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1457:6)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1663:12
+12 error                 at Object.advance (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1116:26)
+12 error                 at begin (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2928:20)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2888:6
+12 error         message: >
+12 error             Died on test #1     at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:406:15)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:313:13)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at http://localhost:7357/6793/tests/index.html:126:11: KragleTemplate is not defined
+12 error         Log: |
+12 error     ...
+12 error not ok 15 Chrome 65.0 - KragleTemplate > Event Handler Bindings: can insert event handlers on an element
+12 error     ---
+12 error         actual: >
+12 error             null
+12 error         expected: >
+12 error             null
+12 error         stack: >
+12 error             ReferenceError: KragleTemplate is not defined
+12 error                 at createTemplateAndInstantiate (http://localhost:7357/6793/tests/index.html:131:26)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:439:40)
+12 error                 at runTest (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1471:30)
+12 error                 at Test.run (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1457:6)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1663:12
+12 error                 at Object.advance (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1116:26)
+12 error                 at begin (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2928:20)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2888:6
+12 error         message: >
+12 error             Died on test #1     at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:437:15)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:435:13)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at http://localhost:7357/6793/tests/index.html:126:11: KragleTemplate is not defined
+12 error         Log: |
+12 error     ...
+12 error not ok 16 Chrome 65.0 - KragleTemplate > Event Handler Bindings: can insert event handlers on a deeply nested element
+12 error     ---
+12 error         actual: >
+12 error             null
+12 error         expected: >
+12 error             null
+12 error         stack: >
+12 error             ReferenceError: KragleTemplate is not defined
+12 error                 at createTemplateAndInstantiate (http://localhost:7357/6793/tests/index.html:131:26)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:463:40)
+12 error                 at runTest (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1471:30)
+12 error                 at Test.run (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1457:6)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1663:12
+12 error                 at Object.advance (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1116:26)
+12 error                 at begin (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2928:20)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2888:6
+12 error         message: >
+12 error             Died on test #1     at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:461:15)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:435:13)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at http://localhost:7357/6793/tests/index.html:126:11: KragleTemplate is not defined
+12 error         Log: |
+12 error     ...
+12 error not ok 17 Chrome 65.0 - KragleTemplate > Event Handler Bindings: ignores multiple handlers for a single event on an element
+12 error     ---
+12 error         actual: >
+12 error             null
+12 error         expected: >
+12 error             null
+12 error         stack: >
+12 error             ReferenceError: KragleTemplate is not defined
+12 error                 at createTemplateAndInstantiate (http://localhost:7357/6793/tests/index.html:131:26)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:487:40)
+12 error                 at runTest (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1471:30)
+12 error                 at Test.run (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1457:6)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1663:12
+12 error                 at Object.advance (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1116:26)
+12 error                 at begin (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2928:20)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2888:6
+12 error         message: >
+12 error             Died on test #1     at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:485:15)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:435:13)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at http://localhost:7357/6793/tests/index.html:126:11: KragleTemplate is not defined
+12 error         Log: |
+12 error     ...
+12 error not ok 18 Chrome 65.0 - KragleTemplate > Event Handler Bindings: can insert event handlers on multiple elements
+12 error     ---
+12 error         actual: >
+12 error             null
+12 error         expected: >
+12 error             null
+12 error         stack: >
+12 error             ReferenceError: KragleTemplate is not defined
+12 error                 at createTemplateAndInstantiate (http://localhost:7357/6793/tests/index.html:131:26)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:509:40)
+12 error                 at runTest (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1471:30)
+12 error                 at Test.run (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1457:6)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1663:12
+12 error                 at Object.advance (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1116:26)
+12 error                 at begin (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2928:20)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2888:6
+12 error         message: >
+12 error             Died on test #1     at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:507:15)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:435:13)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at http://localhost:7357/6793/tests/index.html:126:11: KragleTemplate is not defined
+12 error         Log: |
+12 error     ...
+12 error not ok 19 Chrome 65.0 - KragleTemplate > Event Handler Bindings: can insert event handlers with hyphenated names on an element
+12 error     ---
+12 error         actual: >
+12 error             null
+12 error         expected: >
+12 error             null
+12 error         stack: >
+12 error             ReferenceError: KragleTemplate is not defined
+12 error                 at createTemplateAndInstantiate (http://localhost:7357/6793/tests/index.html:131:26)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:528:40)
+12 error                 at runTest (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1471:30)
+12 error                 at Test.run (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1457:6)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1663:12
+12 error                 at Object.advance (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:1116:26)
+12 error                 at begin (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2928:20)
+12 error                 at http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2888:6
+12 error         message: >
+12 error             Died on test #1     at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:526:15)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at Object.<anonymous> (http://localhost:7357/6793/tests/index.html:435:13)
+12 error                 at processModule (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2724:16)
+12 error                 at Object.module$1 [as module] (http://localhost:7357/6793/node_modules/qunitjs/qunit/qunit.js:2745:4)
+12 error                 at http://localhost:7357/6793/tests/index.html:126:11: KragleTemplate is not defined
+12 error         Log: |
+12 error     ...
+12 error
+12 error 1..19
+12 error # tests 19
+12 error # pass  0
+12 error # skip  0
+12 error # fail  19
+12 error
+12 error     at Promise.all.then.arr (/usr/local/lib/node_modules/lerna/node_modules/execa/index.js:236:11)
+12 error     at <anonymous>

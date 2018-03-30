@@ -7,10 +7,10 @@ import TemplateBindingsParser from './template-bindings-parser';
  * Template element into a factory for creating template clones (instances)
  * with a set of named bindings to dynamically update the DOM.
  */
-export default class BoundTemplate {
+export default class KragleTemplate {
 
-  _bindingsFactory: TemplateBindingsFactory;
-  _template: HTMLTemplateElement;
+  private _bindingsFactory: TemplateBindingsFactory;
+  private _template: HTMLTemplateElement;
 
   constructor(template: HTMLTemplateElement) {
 

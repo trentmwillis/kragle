@@ -1,27 +1,27 @@
 {
-  "name": "bound-template",
+  "name": "kragle-template",
   "version": "0.1.0",
   "description": "A micro-library for inserting data into HTML Templates via named bindings",
-  "main": "dist/bound-template.js",
+  "main": "dist/kragle-template.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "rollup -c rollup.config.js",
-    "build:minify": "uglifyjs dist/bound-template.js -mc -o dist/bound-template.min.js",
+    "build:minify": "uglifyjs dist/kragle-template.js -mc -o dist/kragle-template.min.js",
     "build:watch": "rollup -c rollup.config.js --watch",
-    "lint": "tslint --project ./",
-    "size": "uglifyjs dist/bound-template.js -mc | gzip -9 | wc -c",
+    "lint": "tslint -c '../../tslint.json' index.ts 'src/**/*.ts'",
+    "size": "uglifyjs dist/kragle-template.js -mc | gzip -9 | wc -c",
     "test": "testem ci"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/trentmwillis/bound-template.git"
+    "url": "git+https://github.com/trentmwillis/kragle-template.git"
   },
   "author": "Trent Willis <trentmwillis@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/trentmwillis/bound-template/issues"
+    "url": "https://github.com/trentmwillis/kragle-template/issues"
   },
-  "homepage": "https://github.com/trentmwillis/bound-template#readme",
+  "homepage": "https://github.com/trentmwillis/kragle-template#readme",
   "devDependencies": {
     "qunitjs": "^2.4.0",
     "rollup": "^0.50.0",

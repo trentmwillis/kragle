@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
 
-  <title>BoundTemplate Tests</title>
+  <title>KragleTemplate Tests</title>
 
   <link rel="stylesheet" href="../node_modules/qunitjs/qunit/qunit.css">
 </head>
@@ -118,17 +118,17 @@
     </template>
   </section>
 
-  <script src="../dist/bound-template.js"></script>
+  <script src="../dist/kragle-template.js"></script>
   <script src="../node_modules/qunitjs/qunit/qunit.js"></script>
   <script src="/testem.js"></script>
 
   <script>
-    QUnit.module('BoundTemplate', function() {
+    QUnit.module('KragleTemplate', function() {
 
       function createTemplateAndInstantiate(id) {
 
         const templateElement = document.getElementById(id);
-        const template = new BoundTemplate(templateElement);
+        const template = new KragleTemplate(templateElement);
 
         return template.create();
 
